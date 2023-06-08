@@ -6,10 +6,25 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "bootstrap": "^5.3.0",
+    "bootstrap-icons": "^1.10.5",
+    "chart.js": "^4.3.0",
+    "@cubejs-client/core": "^0.31.0",
+    "datatables.net-bs5": "^1.13.4",
+    "datatables.net-buttons-bs5": "^2.3.6",
+    "datatables.net-buttons-dt": "^2.3.6",
+    "datatables.net-dt": "^1.13.4",
+    "datatables.net-responsive-bs5": "^2.4.1",
+    "datatables.net-responsive-dt": "^2.4.1",
+    "jquery": "^3.7.0",
     "react": "^18.2.0",
+    "react-bootstrap": "^2.7.4",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
+  },
+  "devDependencies": {
+    "parcel": "^2.6.2"
   },
   "scripts": {
     "start": "react-scripts start",
