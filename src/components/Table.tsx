@@ -14,7 +14,7 @@ import {setOverallPopulation} from "../slices/populationSlice";
 
 
 const Table = () => {
-    const {countries} = useAppSelector(state => state);
+    const countries = useAppSelector(state => state.countries);
     const dispatch = useAppDispatch();
 
 

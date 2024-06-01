@@ -1,9 +1,11 @@
+import {countryType} from "./types";
+
 export const isUpToDate = (lastUpdated: number, days: number) => {
     const now = new Date();
     return (+now - lastUpdated) < days * 1000 * 60 * 60 * 24;
 }
 
-export const saveToLocalStorage = (key: string, value: [string, any][]) => {
+export const saveToLocalStorage = (key: string, value: [string, countryType][]) => {
     const updated = new Date();
     const toStore = {
         data: value,

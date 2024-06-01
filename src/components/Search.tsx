@@ -5,7 +5,7 @@ import {setSearchString, setUserChoice} from "../slices/searchSlice";
 import {setRenderTable} from "../slices/renderSlice";
 import {setCountries} from "../slices/countrySlice";
 import {setMessage} from "../slices/messageSlice";
-import {requestFromServer} from "../api/requestFromServerAction";
+import {requestFromServer} from "../api/requestFromServer";
 
 const Search = () => {
     const {searchString, userChoice} = useAppSelector(state => state.search);
@@ -34,7 +34,7 @@ const Search = () => {
         cancelTable();
         dispatch(setUserChoice(''));
         dispatch(setSearchString(''));
-        dispatch(requestFromServer(`${base_url}all`, 'countries'));
+        requestFromServer(`${base_url}all`, 'countries', dispatch);
     }
 
     return (

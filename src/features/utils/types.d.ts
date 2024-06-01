@@ -1,26 +1,4 @@
 
-export type CountriesType = {
-    [key: string]: {
-        name: string,
-        capital: string,
-        region: string,
-        population: number,
-        languages: {
-            [key: string]: string
-        },
-        currencies: {
-            [key: string]: {
-                name: string,
-                symbol: string
-            }
-        },
-        flag: {
-            small: string,
-            medium: string,
-            large: string
-        }
-    }
-}
 
 export type currenciesType = {
     [key: string]: {

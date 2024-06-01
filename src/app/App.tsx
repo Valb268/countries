@@ -3,18 +3,20 @@ import {base_url} from "../features/utils/constants";
 import Table from "../components/Table";
 import Search from "../components/Search";
 import Loading from "../components/Loading";
-import {requestFromServer} from "../api/requestFromServerAction";
+import {requestFromServer} from "../api/requestFromServer";
 import {useAppDispatch, useAppSelector} from "./hooks";
 import {setRenderTable} from "../slices/renderSlice";
 import './App.css';
 
 function App() {
 
-  const {renderTable, countries, search} = useAppSelector(state => state);
-  const dispatch = useAppDispatch();
+    const renderTable = useAppSelector(state => state.renderTable);
+    const countries = useAppSelector(state => state.countries);
+    const search = useAppSelector(state => state.search);
+    const dispatch = useAppDispatch();
 
     useEffect(() => {
-        dispatch(requestFromServer(`${base_url}all`, 'countries'));
+        requestFromServer(`${base_url}all`, 'country', dispatch);
         dispatch(setRenderTable(true));
     }, [dispatch]);
 
@@ -30,10 +32,10 @@ function App() {
                 userChoiceUrl = search.userChoice.toLowerCase();
             }
             if (search.searchString) {
-                dispatch(
-                    requestFromServer(
-                        `${base_url}${userChoiceUrl}/${search.searchString}`,
-                        search.searchString));
+                requestFromServer(
+                    `${base_url}${userChoiceUrl}/${search.searchString}`,
+                    search.searchString,
+                    dispatch);
             }
 
         }

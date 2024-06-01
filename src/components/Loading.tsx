@@ -4,7 +4,7 @@ import {useAppSelector} from "../app/hooks";
 
 const Loading = () => {
 
-    const {message} = useAppSelector(state => state);
+    const message = useAppSelector(state => state.message);
 
 
     return (

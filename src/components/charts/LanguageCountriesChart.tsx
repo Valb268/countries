@@ -9,7 +9,7 @@ type Props = {
 const LanguageCountriesChart = ({label}: Props) => {
 
     const chartRef: React.MutableRefObject<any> = useRef(null);
-    const {countries} = useAppSelector(state => state);
+    const countries = useAppSelector(state => state.countries);
 
     useEffect(() => {
         const getLanguagesByCountries = () => {

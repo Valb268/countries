@@ -15,8 +15,8 @@ type Props = {
 const CurrenciesPopulationChart = ({label}: Props) => {
 
     const chartRef: React.MutableRefObject<any> = useRef(null);
-    const {countries} = useAppSelector(state => state);
-    const {overallPopulation} = useAppSelector(state => state);
+    const countries = useAppSelector(state => state.countries);
+    const overallPopulation = useAppSelector(state => state.overallPopulation);
 
     useEffect(() => {
         const countPopulationByCurrency = () => {

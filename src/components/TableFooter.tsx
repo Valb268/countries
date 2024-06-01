@@ -5,7 +5,8 @@ import React from "react";
 
 
 const TableFooter = () => {
-    const {countries, overallPopulation} = useAppSelector(state => state);
+    const countries = useAppSelector(state => state.countries);
+    const overallPopulation = useAppSelector(state => state.overallPopulation);
     const overallPopulationStr = numberWithCommas(overallPopulation);
 
     return (
